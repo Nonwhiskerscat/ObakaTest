@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function goSite(){
+            win=window.open("./Practice_indi1-1.html");
+        }
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgb(99, 0, 102);
+        }
+
+        h1{
+            font-size: 50px;
+            color: white;
+            font-weight: 300;
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        div.box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 700px;
+            
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button{
+            color: white;
+            font-size: 50px;
+        }
+
+        button.box1{
+            background-color: crimson;
+            width: 300px;
+            height: 100px;
+            border: white 2px solid;
+            text-align: center;
+            line-height: 100px; 
+        }       
+
+        button.box2{
+            background-color: rgba(0,0,0,0);
+            overflow: hidden;
+            width: 300px;
+            height: 100px;
+            border: white 2px solid;
+            text-align: center;
+            line-height: 100px; 
+            position: relative;
+        }
+
+        button.box2::before{
+            background-color: crimson;
+            content: '예';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 100%;
+
+            transition-duration: 0.1s;
+            transform: translateX(-100%);
+        }
+
+        button.box2:hover::before{
+            transform: translateX(0);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>당신은 바보 멍충이입니까?</h1>
+    <div class="box">
+        <button class="box1" onclick="goSite()">
+            <p>예</p>
+        </button>
+        <button class="box2" onclick="goSite()">
+            <p>아니요</p>
+        </button>
+    </div>
+    
+</body>
+</html>
